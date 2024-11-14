@@ -74,6 +74,18 @@ export declare class RIDBStore implements SDK.Pluto.Store {
 }
 ```
 
+### How to enable storage encryption?
+Add a password attribute to the constructor
+
+```typescript 
+import {RIDBStore} from '@trust0/identus-store'
+const apollo = new SDK.Apollo();
+const store = new RIDBStore({
+    dbName: YOUR_DATABASE_NAME,
+    password: 'my local db password'
+})
+```
+
 ### How to use a different store?
 There's currently 2 available storages, inMemory and indexDB
 
