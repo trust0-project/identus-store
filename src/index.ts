@@ -1,4 +1,13 @@
-import { BaseStorage, MigrationPathsForSchema, MigrationPathsForSchemas, QueryType, RIDB, SchemaType, StorageType } from '@trust0/ridb';
+import {
+    BaseStorage,
+    MigrationPathsForSchema,
+    MigrationPathsForSchemas,
+    QueryType,
+    RIDB,
+    SchemaType,
+    StorageType
+} from '@trust0/ridb';
+
 import SDK from '@hyperledger/identus-edge-agent-sdk';
 
 type RT = ReturnType<typeof SDK.makeCollections>;
@@ -7,7 +16,7 @@ type ExtractSchemas = {
     [key in keyof RT]: SchemaType
 };
 
-type CollectionsInternal = {schemas: ExtractSchemas, migrations: MigrationPathsForSchemas<ExtractSchemas>}
+type CollectionsInternal = { schemas: ExtractSchemas, migrations: MigrationPathsForSchemas<ExtractSchemas> }
 export class RIDBStore implements SDK.Pluto.Store {
     private _db: RIDB<ExtractSchemas>;
 
@@ -25,7 +34,7 @@ export class RIDBStore implements SDK.Pluto.Store {
                 schemas,
                 migrations
             }
-        }, {schemas:{}, migrations:{}} as CollectionsInternal)
+        }, { schemas: {}, migrations: {} } as CollectionsInternal)
     }
 
     constructor(
@@ -34,9 +43,9 @@ export class RIDBStore implements SDK.Pluto.Store {
             storageType?: typeof BaseStorage | StorageType;
             password?: string;
         }
-    ) { 
-        const {dbName} = this.options;
-        const {schemas, migrations} = this.extractCollections();
+    ) {
+        const { dbName } = this.options;
+        const { schemas, migrations } = this.extractCollections();
         this._db = new RIDB<typeof schemas>({
             dbName,
             schemas,
