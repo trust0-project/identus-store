@@ -1,6 +1,6 @@
 {
   "name": "@trust0/identus-store",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Identus SDK Pluto.Store build with RIDB",
   "publishConfig": {
     "access": "public"
@@ -30,18 +30,17 @@
   "license": "ISC",
   "peerDependencies": {
     "@hyperledger/identus-edge-agent-sdk": "^6.5.1",
-    "@trust0/ridb": "^1.2.4"
+    "@trust0/ridb": "^1.4.7"
   },
   "devDependencies": {
     "@esbuild-plugins/node-resolve": "^0.2.2",
     "@hyperledger/identus-edge-agent-sdk": "^6.5.1",
-    "@trust0/ridb": "^1.2.4",
-    "@trust0/ridb-core": "^1.3.1",
-    "@types/node": "^20.14.2",
-    "esbuild": "0.21.5",
+    "@trust0/ridb": "^1.4.7",
+    "@types/node": "^22.13.1",
+    "esbuild": "0.25.1",
     "esbuild-plugin-d.ts": "^1.3.1",
     "esbuild-plugin-wasm": "^1.1.0",
     "esbuild-plugin-wasm-pack": "^1.1.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.8.2"
   }
 }
