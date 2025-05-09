@@ -1,6 +1,6 @@
 {
   "name": "@trust0/identus-store",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Identus SDK Pluto.Store build with RIDB",
   "publishConfig": {
     "access": "public"
