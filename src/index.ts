@@ -1,14 +1,10 @@
 import {
-    BaseStorage,
-    MigrationPathsForSchema,
-    MigrationPathsForSchemas,
-    QueryType,
     RIDB,
-    SchemaType,
     StorageType
 } from '@trust0/ridb';
 
 import SDK from '@hyperledger/identus-edge-agent-sdk';
+import { SchemaType, MigrationPathsForSchemas, MigrationPathsForSchema, BaseStorage, QueryType } from '@trust0/ridb-core';
 
 type RT = ReturnType<typeof SDK.makeCollections>;
 
@@ -49,7 +45,7 @@ export class RIDBStore implements SDK.Pluto.Store {
         this._db = new RIDB<typeof schemas>({
             dbName,
             schemas,
-            migrations: migrations as any
+            migrations
         });
     }
 
