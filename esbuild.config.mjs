@@ -52,7 +52,7 @@ const generic = {
     define: {
         'global.Buffer': 'Buffer',
     },
-    external: ['buffer',"@trust0/ridb", '@hyperledger/identus-edge-agent-sdk']
+    external: ['buffer',"@trust0/ridb", '@hyperledger/identus-sdk']
 }
 
 // Build ES module

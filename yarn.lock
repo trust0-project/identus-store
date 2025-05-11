@@ -236,9 +236,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperledger/identus-edge-agent-sdk@npm:^6":
-  version: 6.6.0
-  resolution: "@hyperledger/identus-edge-agent-sdk@npm:6.6.0"
+"@hyperledger/identus-sdk@npm:^7.0.0-rc.2":
+  version: 7.0.0-rc.2
+  resolution: "@hyperledger/identus-sdk@npm:7.0.0-rc.2"
   dependencies:
     "@esbuild/darwin-arm64": "npm:0.15.18"
     "@hyperledger/identus-apollo": "npm:^1.4.5"
@@ -274,7 +274,7 @@ __metadata:
       optional: true
     "@rollup/rollup-linux-x64-gnu":
       optional: true
-  checksum: 10c0/983105faee62c61f513d2f4a2d108f42ad84383f637d2531b20b42baf4a23d7c201b9866ab1cc87a6653c4c021ca8e396c417d7b3a78bb7160a22e7d04b0c883
+  checksum: 10c0/52cbb9e5a713b96a87ef1697161fff48e67181ca38436d6bd82f1d353462bc5d4bdc6a9eecce5e94005c9ee392b588d8d23f2faaf9294423fe2866a512cf299a
   languageName: node
   linkType: hard
 
@@ -542,9 +542,9 @@ __metadata:
   resolution: "@trust0/identus-store@workspace:."
   dependencies:
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
-    "@hyperledger/identus-edge-agent-sdk": "npm:^6"
-    "@trust0/ridb": "npm:^1.5.15"
-    "@trust0/ridb-core": "npm:^1.7.13"
+    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.2"
+    "@trust0/ridb": "npm:^1.5.21"
+    "@trust0/ridb-core": "npm:^1.7.16"
     "@types/node": "npm:^22.13.1"
     esbuild: "npm:0.25.1"
     esbuild-plugin-d.ts: "npm:^1.3.1"
@@ -552,24 +552,23 @@ __metadata:
     esbuild-plugin-wasm-pack: "npm:^1.1.0"
     typescript: "npm:^5.8.2"
   peerDependencies:
-    "@hyperledger/identus-edge-agent-sdk": ^6
-    "@trust0/ridb": ^1.5.15
+    "@trust0/ridb": ^1.5.21
   languageName: unknown
   linkType: soft
 
-"@trust0/ridb-core@npm:^1.7.13":
-  version: 1.7.13
-  resolution: "@trust0/ridb-core@npm:1.7.13"
-  checksum: 10c0/b88bc675daa94eb3a3df8fa224d26c7625b36d54a4eaa92f1f1f59a9c6b940f50ff483c382ee6b2122ed848153ead04b4c41f265806e089953d82a7ed126a24d
+"@trust0/ridb-core@npm:^1.7.16":
+  version: 1.7.16
+  resolution: "@trust0/ridb-core@npm:1.7.16"
+  checksum: 10c0/1a4fe6c2e881c1b6a45ace7311f03868748a6a8a5aaed1fb04f5a22e61d3e9ecb91b56189ee41f8e69144b0ec808718050a7c27f7c0b315bc0e35983a51ec8cd
   languageName: node
   linkType: hard
 
-"@trust0/ridb@npm:^1.5.15":
-  version: 1.5.15
-  resolution: "@trust0/ridb@npm:1.5.15"
+"@trust0/ridb@npm:^1.5.21":
+  version: 1.5.21
+  resolution: "@trust0/ridb@npm:1.5.21"
   dependencies:
-    "@trust0/ridb-core": "npm:^1.7.13"
-  checksum: 10c0/b2049ffc706997b6dd7d00012d038ff7d219b2c4b712979ec328d47fd410272d273371126c581aa0b75a23e5a0ebe3458443f6ef91d7ac0d54a3d48905ecc803
+    "@trust0/ridb-core": "npm:^1.7.16"
+  checksum: 10c0/58c606bd36ee7329d66fe3834e0802f0a2a1d9c620c6cccb5926e6ba9b34af8634b04a0400707dca83b83ae49e36bef92acb90ba00c2a57ffa58a82ab93c6a60
   languageName: node
   linkType: hard
 
