@@ -4,27 +4,10 @@ import {
 } from '@trust0/ridb';
 import SDK from '@hyperledger/identus-sdk';
 import { 
-    SchemaType, 
-    MigrationPathsForSchemas, 
-    MigrationPathsForSchema, 
     BaseStorage, 
     QueryType, 
     SchemaTypeRecord 
 } from '@trust0/ridb-core';
-
-type RT = ReturnType<typeof SDK.makeCollections>;
-
-type ExtractSchemas = {
-    [key in keyof RT]: SchemaType
-};
-
-type CollectionsInternal = { 
-    schemas: ExtractSchemas, 
-    migrations: MigrationPathsForSchemas<ExtractSchemas> 
-}
-
-type DatabaseState = 'disconnected' | 'loading' | 'loaded' | 'error';
-
 
 export const createStore = <T extends SchemaTypeRecord>(
   options: {
@@ -34,8 +17,6 @@ export const createStore = <T extends SchemaTypeRecord>(
   }
 ): SDK.Pluto.Store => {
     const { db, password, storageType } = options;
-    let state: DatabaseState = 'disconnected';
-
     const parseName = (collectionName: keyof T): keyof T => {
         const name = 
             String(collectionName)
@@ -47,7 +28,6 @@ export const createStore = <T extends SchemaTypeRecord>(
         }
         return name as keyof T;
     }
-    
     return {
         async query(table: string, query?: QueryType<any>): Promise<any[]> {
             const collectionName = parseName(table);
@@ -72,14 +52,11 @@ export const createStore = <T extends SchemaTypeRecord>(
         },
         async start() {
             if (!db.started) {
-                state = 'loading';
                 await db.start({ storageType, password })
-                state = 'loaded';
             }
         },
         async stop() {
             await db.close()
-            state = 'disconnected';
         }
     }
 }

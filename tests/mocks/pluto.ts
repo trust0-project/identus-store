@@ -1,9 +1,9 @@
 import SDK from "@hyperledger/identus-sdk";
 import { randomUUID } from "crypto";
-import { RIDB, StorageType, SchemaFieldType } from "@trust0/ridb";
+import { RIDB, StorageType  } from "@trust0/ridb";
 
 import { createStore } from '../../src';
-import { Property } from "@trust0/ridb-core";
+import { Property,SchemaFieldType } from "@trust0/ridb-core";
 
 
 type CreateInstanceArgs = {
